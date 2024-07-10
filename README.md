@@ -35,20 +35,20 @@ Backend: Express.js
 Database: JSON file for data persistence
 
 ## Reflection
-Learning Experience
+1. Learning Experience
    - Handling types and interfaces in a React project with TypeScript as this was my first time programming in Typescript
    - implementing backend using Express.js
    - the usage of ports in connecting the frontend and backend
-Future Approaches (things to be done differently)
+2. Future Approaches (things to be done differently)
    - enhanced UI for better styling, features, and interactivity
    - more robust admin login features: adding new admins, removing irrelevant admins, logging out,
      staying logged in after refreshing
    - ability to edit partners, more sophisticated filtering by text
    - storing partner information in a more robust manner, ex: MySQL, Firebase/Supabase
-Issues and Solutions
+3. Issues and Solutions
    - TypeScript errors due to incorrect types or missing properties, "type expected" issues
    - general debugging and error handling for async operations and UI updates
-Bonus Features
+4. Bonus Features
    - Search by title, active status
    - User authorization
    - Data Persistence
