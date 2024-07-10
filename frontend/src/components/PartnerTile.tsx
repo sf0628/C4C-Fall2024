@@ -1,4 +1,6 @@
-import { PartnerData } from "../types";
+import React from 'react';
+import { PartnerData} from '../types';
+import { PartnerDetails } from '../../../backend/src/types';
 
 /*
   A block for a single partner, containing information for them
@@ -6,21 +8,34 @@ import { PartnerData } from "../types";
 */
 
 interface PartnerTileProps {
-  partnerData: PartnerData
+  partnerData: PartnerDetails;
+  onRemove: () => void;
 }
 
-// @ts-expect-error: This variable is currently unused. You will have to either use them or remove them (at which point you should remove this comment)
-function PartnerTile({ partnerData }: PartnerTileProps) {
+function PartnerTile({ partnerData, onRemove }: PartnerTileProps) {
+  const partner = partnerData as PartnerDetails;
+  const getStatus = (active: boolean): string => {
+    return active ? 'Active' : 'Inactive';
+  };
 
   return (
     <div className="partner-tile">
-      <img className="partner-thumbnail" src='' />
+      <h2 className="partner-name">{partner.name}</h2>
+      <img className="partner-thumbnail" src={partner.thumbnailUrl} alt={partner.name} />
       <hr />
       <div className="partner-info">
-        This is some placeholder content - you'll need to replace the content here with actual partner information.
+        <span 
+          id="status"
+          style={{color: partner.active ? '#2eba27' : 'red', fontSize: '10pt', fontWeight: 'bold' }}
+        >
+          {getStatus(partner.active)}
+        </span>
+        <p>{partner.description}</p>
       </div>
+      <button type="button" className="partner-button" onClick={onRemove}>Remove</button>
+      <button type="button" className="edit-partner-button">Edit</button>
     </div>
-  )
+  );
 }
 
 export default PartnerTile;

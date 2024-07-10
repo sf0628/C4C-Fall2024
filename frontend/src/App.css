@@ -4,7 +4,7 @@
   ================
 */
 
-/* MainDisplay */
+/* MainDisplay && Admin Login */
 
 #main-content {
   width: 1000px;
@@ -12,20 +12,18 @@
   margin: auto;
 }
 
-#main-partners-grid {
+#main-partners-grid, #login-content {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
   gap: 25px;
 }
 
 h1.title {
   text-align: center;
-  font-size: 24pt;
-
-  padding-bottom: 25px;
+  font-size: 23pt;
+  padding-bottom: 20px;
 }
 
 /* PartnerTile */
@@ -43,13 +41,64 @@ h1.title {
   border-radius: 12px;
 
   padding: 25px;
+  box-sizing: border-box;
+  overflow: scroll;
 }
 
 .partner-thumbnail {
   max-width: 330px;
   max-height: 150px;
+  width: 100%;
+  height: auto;
 }
 
 .partner-info {
   font-size: 0.9em;
+}
+
+h2.partner-name {
+  padding-top: 20px;
+}
+
+/* AddPartner && SearchPartner */
+#partner-content, #search-content {
+  border: 1px solid #3d3d3d;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+#partner-form, #search-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-input {
+  width: 100%;
+  max-width: 300px;
+
+  min-height: calc(0.9em + (0.8em * 2) + 0.6em);
+  padding: 0.8em;
+}
+
+button {
+  background-color: #2eba27;
+  width: 60px;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+}
+
+h1.form-title, h1.search-title {
+  font-size: 15pt;
+}
+
+.form-input {
+  height: 5px;
+  padding: 0.5em;
+  margin-bottom: 10px;
+  border: 0.9px solid rgb(122, 118, 118);
+  border-radius: 5px;
 }
